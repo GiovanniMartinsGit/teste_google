@@ -2,14 +2,14 @@
 
 O aplicativo de Vendas é uma aplicação web que permite o upload de arquivos de vendas separados por TAB e processa os dados para salvar corretamente em um banco de dados relacional. Além disso, o aplicativo exibe as vendas registradas em uma tabela e calcula a receita bruta total representada pelos dados de vendas.
 
-Requisitos:
+#Requisitos:
 
 Ruby: 3.2.2
 Rails: 7.0.5
 PostgreSQL: 10 ou superior
 
 
-Instalação:
+#Instalação:
 
 Clone o repositório do aplicativo de vendas para o seu ambiente local.
 No diretório raiz do aplicativo, execute o seguinte comando para instalar as dependências:
@@ -34,7 +34,7 @@ Acesse o aplicativo no seu navegador em http://localhost:3000.
 
 Configuração em Container: 
 
-Dockerfile:
+#Dockerfile:
 
 FROM ruby:3.2.2
 
@@ -55,7 +55,7 @@ EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
 
 
-docker-compose.yml: 
+#docker-compose.yml: 
 
 version: "3.9"
 services:
@@ -82,18 +82,21 @@ services:
     depends_on:
       - teste_google_postgres
 
-# docker compose build
-# docker compose run --rm teste_google bundle install
-# docker compose run --rm teste_google rake db:drop
-# docker compose run --rm teste_google rake db:create
-# docker compose run --rm teste_google rake db:migrate
-# docker compose run --rm teste_google rake seed:migrate
-# docker compose run  --rm -p 3000:3000 teste_google rails s -b 0.0.0.0
-# docker compose run  --rm teste_google rails c
+#COMANDOS PARA O CONTAINER
+
+ docker exec -it <NOME_DO_CONTAINER>
+ docker compose build
+ docker compose run --rm teste_google bundle install
+ docker compose run --rm teste_google rake db:drop
+ docker compose run --rm teste_google rake db:create
+ docker compose run --rm teste_google rake db:migrate
+ docker compose run --rm teste_google rake seed:migrate
+ docker compose run  --rm -p 3000:3000 teste_google rails s -b 0.0.0.0
+ docker compose run  --rm teste_google rails c
 
 Uso:
 
-Página Inicial:
+#Página Inicial:
 
 
 A página inicial exibe todas as vendas registradas em uma tabela.
@@ -111,7 +114,7 @@ Clique no botão "Enviar" para enviar o arquivo e processar os dados.
 Após o processamento bem-sucedido, você será redirecionado para a página inicial.
 
 
-Funcionalidades:
+#Funcionalidades:
 
 Upload de Arquivo:
 
@@ -124,7 +127,7 @@ O arquivo deve conter uma linha de cabeçalho.
 Os dados do arquivo são normalizados e salvos corretamente no banco de dados.
 
 
-Exibição de Vendas:
+#Exibição de Vendas:
 
 As vendas registradas são exibidas em uma tabela na página inicial.
 
@@ -137,7 +140,7 @@ A receita bruta total é calculada somando o preço do item multiplicado pelo n�
 A receita bruta total é exibida na página inicial abaixo da tabela de vendas.
 
 
-Considerações Finais:
+#Considerações Finais:
 
 O aplicativo de Vendas é uma solução simples e eficiente para processar e exibir dados de vendas a partir de arquivos separados por TAB. Ele automatiza o processo de importação de dados e fornece uma visão clara da receita bruta total. Sinta-se à vontade 
 
