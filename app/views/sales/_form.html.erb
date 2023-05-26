@@ -1,0 +1,4 @@
+<%= form_with model: @sale, url: sales_path, local: true, multipart: true do |form| %>
+  <%= form.file_field :sales_file, accept: '.tab' %>
+  <%= form.submit "Enviar" %>
+<% end %>

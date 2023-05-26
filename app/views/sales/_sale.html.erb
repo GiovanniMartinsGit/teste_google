@@ -1,0 +1,27 @@
+<div id="<%= dom_id sale %>">
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th>Purchaser Name</th>
+        <th>Item Description</th>
+        <th>Item Price</th>
+        <th>Purchase Count</th>
+        <th>Merchant Address</th>
+        <th>Merchant Name</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= sale.purchaser_name %></td>
+          <td><%= sale.item.description %></td>
+          <td><%= sale.item.price %></td>
+          <td><%= sale.purchase_count %></td>
+          <td><%= sale.merchant.merchant_address %></td>
+          <td><%= sale.merchant.name %></td>
+          <td>R$<%= sale.item.price * sale.purchase_count %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+

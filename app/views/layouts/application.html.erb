@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TesteGoogle</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% if merchant_signed_in? %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%= link_to 'Reset Password', edit_merchant_registration_path %>
+              <%= button_to 'Log out', destroy_merchant_session_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
